@@ -24,6 +24,7 @@ import three.scenes.Scene;
 import three.textures.Texture;
 import three.THREE;
 import flash.display.Sprite;
+import flash.display.BitmapData;
 import flash.geom.Matrix3D;
 import flash.geom.Rectangle;
 import flash.utils.ByteArray;
@@ -324,7 +325,7 @@ class GlRender extends Sprite {
 
 	}
 	///???
-	public function clearTarget(const GLRenderTarget::Ptr& renderTarget, color:Bool = true, depth:Bool = true, stencil:Bool = true):Void{
+	public function clearTarget(renderTarget:Dynamic, color:Bool = true, depth:Bool = true, stencil:Bool = true):Void{
 
 	}
 
@@ -380,7 +381,7 @@ class GlRender extends Sprite {
 		
 	}
 
-	public function deallocateRenderTarget(target:RenderTarget):Void{
+	public function deallocateRenderTarget(target:Dynamic):Void{
 		
 	}
 
@@ -433,296 +434,300 @@ class GlRender extends Sprite {
 	private function setDirectBuffers(geometry:Geometry, hint:Int, dispose:Bool):Void{
 		
 	}
-
-	public function renderBuffer():Void{
+	
+	private function renderBuffer(camera:Camera, lights:Array<Light>,fog:Fog, material:Material, geometry:Geometry, object:Object3D):Void{
 		
 	}
 
-	public function renderBufferDirect():Void{
+	private function renderBufferDirect(camera:Camera, lights:Array<Light>, fog:Fog, material:Material, geometry:Geometry, object:Object3D):Void{
 		
 	}
 
-	public function renderBufferImmediate():Void{
+	private function renderBufferImmediate(object:Object3D, program:Dynamic, material:Material):Void{
 		
 	}
 
-	public function enableAttribute(){
+	private function enableAttribute(attribute:Dynamic):Void{
 
 	}
 
-	public function disableAttributes(){
+	private function disableAttributes():Void{
 
 	}
 
-	public function setupMorphTargets(){
+	private function setupMorphTargets(material:Material, geometryGroup:GeometryGroup, object:Object3D):Void{
 		
 	}
 
-	public function painterSortStable(){
+	public function painterSortStable(a:Dynamic, b:Dynamic){
 		
 	}
 
-	public function numericalSort(){
+	public function numericalSort(a:Int,b:Int){
 		
 	}
 
-	public function renderPlugins(){
+	private function renderPlugins(plugins:Array<Dynamic>, scene:Scene, camera:Camera ):Void{
 
 	}
 
-	public function renderObjects(){
+	private function renderObjects(renderList:Array<Object3D>, reverse:Bool, materialType:Int, camera:Camera, lights:Array<Light>, fog:Fog, useBlending:Bool, ?overrideMaterial:Material):Void{
 
 	}
 
-	public function renderObjectsImmediate(){
+	private function renderObjectsImmediate(renderList:Array<Object3D>, materialType:Int, camera:Camera, lights:Array<Light>, fog:Fog, useBlending:Bool, ?overrideMaterial:Material):Void{
 
 	}
 
-	public function renderImmediateObject(){
+	private function renderImmediateObject(camera:Camera, lights:Array<Light>, fog:Fog, material:Material, object:Object3D):Void{
 
 	}	
 
-	public function unrollImmediateBufferMaterial(){
+	public function unrollImmediateBufferMaterial(globject:Object3D):Void{
 
 	}
 
-	public function sortFacesByMaterial(){
+	public function unrollBufferMaterial(globject:Object3D):Void{
 
 	}
 
-	public function initWebGLObjects(){
+	public function sortFacesByMaterial(geometry:Geometry, material:Material):Void{
 
 	}
 
-	public function addObject(){
+	private function initWebGLObjects(scene:Scene):Void{
 
 	}
 
-	public function addBuffer(){
+	public function addObject(object:Object3D, scene:Scene):Void{
 
 	}
 
-	public function addBufferImmediate(){
+	public function addBuffer(objlist:Array<Object3D>, buffer:Array<Dynamic>, object:Object3D):Void{
 
 	}
 
-	public function updateObject(){
+	public function addBufferImmediate(objlist:Array<Object3D>, object:Object3D):Void{
 
 	}
 
-	public function areCustomAttributesDirty(){
+	public function updateObject( object:Object3D ):Void{
 
 	}
 
-	public function clearCustomAttributes(){
+	public function areCustomAttributesDirty(material:Material):Bool{
 
 	}
 
-	public function removeObject(){
+	public function clearCustomAttributes(material:Material):Void{
 
 	}
 
-	public function removeInstances(){
+	public function removeObject(object:Object3D, scene:Scene):Void{
 
 	}
 
-	public function removeInstancesDirect(){
+	public function removeInstances(objlist:Array<Object3D>, object:Object3D):Void{
 
 	}
 
-	public function initMaterial(){
+	public function removeInstancesDirect(objlist:Array<Object3D>, object:Object3D):Void{
 
 	}
 
-	public function setMaterialShaders(){
+	private function initMaterial(material:Material, lights:Array<Light>, fog:Fog, object:Object3D):Void{
 
 	}
 
-	public function setProgram(){
+	public function setMaterialShaders(material:Material, shaders:Dynamic):Void{
 
 	}
 
-	public function refreshUniformsCommon(){
+	public function setProgram(camera:Camera, lights:Array<Light>, fog:Fog, material:Material, object:Object3D):Dynamic{
 
 	}
 
-	public function refreshUniformsLine(){
+	public function refreshUniformsCommon(uniforms:Dynamic,  material:Material):Void{
 
 	}
 
-	public function refreshUniformsDash(){
+	public function refreshUniformsLine(uniforms:Dynamic,  material:Material):Void{
 
 	}
 
-	public function refreshUniformsParticle(){
+	public function refreshUniformsDash(uniforms:Dynamic,  material:Material):Void{
+
+	}
+
+	public function refreshUniformsParticle(uniforms:Dynamic,  material:Material):Void{
 
 	}	
 
-	public function refreshUniformsFog(){
+	public function refreshUniformsFog(uniforms:Dynamic, fog:Fog):Void{
 
 	}
 
-	public function refreshUniformsPhong(){
+	public function refreshUniformsPhong(uniforms:Dynamic,  material:Material):Void{
 
 	}
 
-	public function refreshUniformsLambert(){
+	public function refreshUniformsLambert(uniforms:Dynamic,  material:Material):Void{
 
 	}
 
-	public function refreshUniformsLights(){
+	public function refreshUniformsLights(uniforms:Dynamic,  lights:Array<Light>):Void{
 
 	}
 
-	public function refreshUniformsShadow(){
+	public function refreshUniformsShadow(uniforms:Dynamic,  lights:Array<Light>):Void{
 
 	}
 
-	public function loadUniformsMatrices(){
+	public function loadUniformsMatrices(uniforms:Dynamic, object:Object3D):Void{
 
 	}
 
-	public function getTextureUnit(){
+	public function getTextureUnit():Void{
 
 	}
 
-	public function loadUniformsGeneric(){
+	public function loadUniformsGeneric(program:Dynamic, uniforms:Dynamic){
 
 	}
 
-	public function setupMatrices(){
+	public function setupMatrices(object:Object3D, camera:Camera):Void{
 
 	}
 
-	public function setColorGamma(){
+	public function setColorGamma(array:Array<Color>, offset:Int, color:Color, intensitySq:Float):Void{
 
 	}
 
-	public function setColorLinear(){
+	public function setColorLinear(array:Array<Color>, offset:Int, color:Color, intensity:Float):Void{
 
 	}
 
-	public function setupLights(){
+	public function setupLights(program:Dynamic, lights:Array<Light>):Void{
 
 	}
 
-	public function setFaceCulling(){
+	private function setFaceCulling(cullFace:Int, frontFaceDirection:Int) : Void{
 
 	}
 
-	public function setMaterialFaces(){
+	private function setMaterialFaces(material:Material) : Void{
 
 	}
 
-	public function setDepthTest(){
+	private function setDepthTest(depthTest:Int) : Void{
 
 	}
 
-	public function setDepthWrite(){
+	private function setDepthWrite(depthWrite:Int) : Void{
 
 	}
 
-	public function setLineWidth(){
+	private function setLineWidth(width:Float):Void{
 
 	}
 
-	public function setPolygonOffset(){
+	private function setPolygonOffset(polygonoffset:Bool, factor:Float, units:Float ):Void{
 
 	}
 
-	public function setBlending(){
+	private function setBlending(blending:Int, ?blendEquation:Int, ?blendSrc:Int, ?blendDst:Int) : Void{
 
 	}
 
-	public function generateDefines(){
+	public function generateDefines(defines:Dynamic):Dynamic{
 
 	}
 
-	public function buildProgram(){
+	public function buildProgram(shaderID:String, fragmentShader:String, vertexShader:String, uniforms:Dynamic, attributes:Dynamic, defines:Dynamic, parameters:Dynamic, index0AttributeName:Dynamic):Dynamic{
 
 	}
 
-	public function cacheUniformLocations(){
+	public function cacheUniformLocations(program:Dynamic, identifiers:Dynamic):Void{
 
 	}
 
-	public function cacheAttributeLocations(){
+	public function cacheAttributeLocations(program:Dynamic, identifiers:Dynamic):Void{
 
 	}
 
-	public function addLineNumbers(){
+	public function addLineNumbers(string:String):Dynamic{
 
 	}
 
-	public function getShader(){
+	public function getShader(type:String, string:String):String{
 
 	}
 
-	public function isPowerOfTwo(){
+	public function isPowerOfTwo(value:Int):Bool{
 
 	}
 
-	public function setTextureParameters(){
+	public function setTextureParameters(textureType:String, texture:Texture, isImagePowerOfTwo:Bool):Void{
 
 	}
 
-	public function setTexture(){
+	private function setTexture(texture:Texture, slot:Int):Void{
 
 	}
 
-	public function clampToMaxSize(){
+	public function clampToMaxSize(image:BitmapData, maxSize:Int):BitmapData{
 
 	}
 
-	public function setCubeTexture(){
+	public function setCubeTexture(texture:Texture, slot:Int):Void{
 
 	}
 
-	public function setCubeTextureDynamic(){
+	public function setCubeTextureDynamic(texture:Texture, slot:Int):Void{
 
 	}
 
-	public function setupFrameBuffer(){
+	public function setupFrameBuffer(framebuffer:Array<Dynamic>, renderTarget:Dynamic, textureTarget:String):Void{
 
 	}
 
-	public function setupRenderBuffer(){
+	public function setupRenderBuffer(renderbuffer:Array<Dynamic>, renderTarget:Dynamic ):Void{
 
 	}
 
-	public function setRenderTarget(){
+	private function setRenderTarget(renderTarget:Dynamic):Void{
 
 	}
 
-	public function updateRenderTargetMipmap(){
+	public function updateRenderTargetMipmap(renderTarget:Dynamic):Void{
 
 	}
 
-	public function filterFallback(){
+	public function filterFallback(f:Float):Float{
 
 	}
 
-	public function paramThreeToGL(){
+	private function paramThreeToGL(p:Dynamic):Dynamic{
 
 	}
 
-	public function allocateBones(){
+	private function allocateBones(object:Object3D):Object3D{
 
 	}
 
-	public function allocateLights(){
+	private function allocateLights(lights:Array<Light>):Dynamic{
 
 	}
 
-	public function allocateShadows(){
+	private function allocateShadows(lights:Array<Light>):Int{
 
 	}
 
-	public function initGL(){
+	private function initGL():Void{
 
 	}
 
-	public function setDefaultGLState(){
+	private function setDefaultGLState():Void{
 		
 	}
 }
